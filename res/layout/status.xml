@@ -11,5 +11,5 @@
 <EditText android:inputType="textMultiLine" android:layout_width="match_parent" android:layout_height="fill_parent" android:layout_weight="1" android:hint="@string/upload_hint" android:id="@+id/edit_status">
     <requestFocus></requestFocus>
 </EditText>
-<Button android:layout_height="wrap_content" android:includeFontPadding="false" android:marqueeRepeatLimit="marquee_forever" android:layout_width="fill_parent" android:text="@string/button_update" android:id="@+id/button_update"></Button>
+<Button android:layout_height="wrap_content" android:includeFontPadding="false" android:marqueeRepeatLimit="marquee_forever" android:layout_width="fill_parent" android:text="@string/button_update" android:id="@+id/button_update" android:onClick="onClick"></Button>
 </LinearLayout>
