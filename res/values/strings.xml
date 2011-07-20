@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Update Status</string>
+    <string name="app_name">YambaDemo</string>
+    <string name="update_status">update status</string>
+    <string name="upload_hint">Add new status to be uploaded</string>
+    <string name="button_update">Update!</string>
+</resources>
