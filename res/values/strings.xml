@@ -5,4 +5,8 @@
     <string name="update_status">update status</string>
     <string name="upload_hint">Add new status to be uploaded</string>
     <string name="button_update">Update!</string>
+    <string name="possitive_feedback">Thank you for sumitting this message</string>
+    <string name="negative_feedback">Sorry, something went wrong</string>
+    <string name="username">Username</string>
+    <string name="usernameSummary">Please enter your login username</string>
 </resources>

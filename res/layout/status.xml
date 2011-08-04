@@ -3,12 +3,12 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:weightSum="1">
+    android:weightSum="1" android:background="@drawable/tweeter">
 <TextView  
     android:layout_width="fill_parent" 
     android:layout_height="wrap_content" 
     android:gravity="center" android:text="@string/update_status"/>
-<EditText android:inputType="textMultiLine" android:layout_width="match_parent" android:layout_height="fill_parent" android:layout_weight="1" android:hint="@string/upload_hint" android:id="@+id/edit_status">
+<EditText android:inputType="textMultiLine" android:layout_width="match_parent" android:layout_height="fill_parent" android:layout_weight="1" android:hint="@string/upload_hint" android:id="@+id/edit_status" android:background="#309f" android:padding="5dp">
     <requestFocus></requestFocus>
 </EditText>
 <Button android:layout_height="wrap_content" android:includeFontPadding="false" android:marqueeRepeatLimit="marquee_forever" android:layout_width="fill_parent" android:text="@string/button_update" android:id="@+id/button_update" android:onClick="onClick"></Button>
