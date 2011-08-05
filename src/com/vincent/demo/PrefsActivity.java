@@ -8,9 +8,10 @@ public class PrefsActivity extends PreferenceActivity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		setTitle(R.string.title_preferences);
 		addPreferencesFromResource(R.xml.prefs);
 	}
-	
 	
 } 
  
