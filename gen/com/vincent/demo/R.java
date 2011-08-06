@@ -31,6 +31,8 @@ public final class R {
         public static final int hello=0x7f050000;
         public static final int negative_feedback=0x7f050006;
         public static final int possitive_feedback=0x7f050005;
+        public static final int progress_string=0x7f05000b;
+        public static final int progress_title=0x7f05000a;
         public static final int title_preferences=0x7f050009;
         public static final int update_status=0x7f050002;
         public static final int upload_hint=0x7f050003;

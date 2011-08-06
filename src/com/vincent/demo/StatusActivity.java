@@ -3,6 +3,8 @@ package com.vincent.demo;
 import winterwell.jtwitter.Twitter;
 import winterwell.jtwitter.TwitterException;
 import android.app.Activity;
+import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -15,6 +17,8 @@ import android.widget.Toast;
 
 public class StatusActivity extends Activity{
 	EditText editStatus;
+	ProgressDialog postingDialog;
+	static final int DIALOG_ID = 100;
 	
     /** Called when the activity is first created. */
     @Override
@@ -27,7 +31,6 @@ public class StatusActivity extends Activity{
     
 	@Override
 	protected void onStop() {
-		// TODO Auto-generated method stub
 		super.onStop();
 		//Debug.stopMethodTracing();
 	}
@@ -37,15 +40,35 @@ public class StatusActivity extends Activity{
 	
 
 	public void onClick(View v) {
-		// TODO Auto-generated method stub
 		String status = editStatus.getText().toString();
 
-		
+		showDialog(DIALOG_ID);
 		new PostToTwitter().execute(status);
 	
 		
 		Log.d("yamba", "onClicked "+status);
 	}
+	
+	///////dialog stuff
+	@Override
+	protected Dialog onCreateDialog(int id) {
+		switch(id){
+		
+			case DIALOG_ID: {
+				ProgressDialog dialog = new ProgressDialog(this);
+		         dialog.setTitle(StatusActivity.this.getString(R.string.progress_title));
+		         dialog.setMessage(StatusActivity.this.getString(R.string.progress_string));
+		         dialog.setIndeterminate(true);
+		         dialog.setCancelable(true);
+		         return dialog;
+			}
+		
+		}
+		
+		return null;
+		 
+    }
+
 	
 	
 	///////Menu Stuff
@@ -66,9 +89,9 @@ public class StatusActivity extends Activity{
 		return super.onCreateOptionsMenu(menu);
 	}
 
+
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// TODO Auto-generated method stub
 		
 		switch(item.getItemId()){
 			case R.id.itemPrefs:
@@ -104,6 +127,7 @@ public class StatusActivity extends Activity{
 		@Override
 		protected void onPostExecute(String result) {
 			super.onPostExecute(result);
+			dismissDialog(DIALOG_ID);
 			Toast.makeText(StatusActivity.this, result, Toast.LENGTH_LONG).show(); // must have .show() or it will not compile
 		}
 		
