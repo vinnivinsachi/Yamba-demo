@@ -12,4 +12,6 @@
     <string name="title_preferences">Preferences</string>
     <string name="progress_title">Posting to Yamba</string>
     <string name="progress_string">Please wait while we are posting to yamba...</string>
+    <string name="password">password</string>
+    <string name="password_string">Please enter your password</string>
 </resources>

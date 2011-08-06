@@ -1,6 +1,5 @@
 package com.vincent.demo;
 
-import winterwell.jtwitter.Twitter;
 import winterwell.jtwitter.TwitterException;
 import android.app.Activity;
 import android.app.Dialog;
@@ -111,9 +110,22 @@ public class StatusActivity extends Activity{
 			//into an array. 
 			String result;
 			try{
-				Twitter twitter = new Twitter("student", "password");
+				
+				YambaApplication app = ((YambaApplication)StatusActivity.this.getApplication());
+				
+				/*SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(StatusActivity.this);
+				
+				String username = prefs.getString("username", "");
+				String password = prefs.getString("password", "");
+				
+				//Log.i("yamba variable", "username: "+username);
+				//Log.i("yamba variable", "password: "+password);
+
+				Twitter twitter = new Twitter(username, password);
 				twitter.setAPIRootUrl("http://yamba.marakana.com/api");
-				twitter.setStatus(status[0]);//access the first element of argument array
+				*/
+				
+				app.getTwitter().setStatus(status[0]);//access the first element of argument array
 				result = StatusActivity.this.getString(R.string.possitive_feedback);
 			}catch (TwitterException e){
 				result = StatusActivity.this.getString(R.string.negative_feedback);

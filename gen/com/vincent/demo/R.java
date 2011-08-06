@@ -30,6 +30,8 @@ public final class R {
         public static final int button_update=0x7f050004;
         public static final int hello=0x7f050000;
         public static final int negative_feedback=0x7f050006;
+        public static final int password=0x7f05000c;
+        public static final int password_string=0x7f05000d;
         public static final int possitive_feedback=0x7f050005;
         public static final int progress_string=0x7f05000b;
         public static final int progress_title=0x7f05000a;
